@@ -11,8 +11,8 @@ const getLugarLatLng = async( dir ) => {
     });
 
     const resp = await instance.get();
-
-    if (resp.data.latt === '0.00000') {
+    
+    if ( encodedUrl === 'undefined' || resp.data.standard === undefined || resp.data.error !== undefined) {
         throw new Error(`No hay resultados para ${ dir}`);
     }
 
